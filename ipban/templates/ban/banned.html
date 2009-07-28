@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<p>{% trans "You were banned from access to this website, because of the following reason:" %}</p>
+<p class="banreason">{{ reason }}</p>
+{% endblock %}
