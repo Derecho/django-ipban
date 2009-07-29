@@ -13,7 +13,7 @@ Here you can add any bans you may like.
 A ban consists of an IP Address, a reason and an optional duration.
 
 # Todo:
-   - Make some translations
+   - Make some more translations (any help kindly accepted!)
 
 # Contact:
 You can contact me on krisje8@gmail.com , or by visiting my website (krisje8.com) and leaving a comment.
