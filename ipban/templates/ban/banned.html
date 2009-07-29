@@ -4,4 +4,6 @@
 {% block content %}
 <p>{% trans "You were banned from access to this website, because of the following reason:" %}</p>
 <p class="banreason">{{ reason }}</p>
+{% if unbandate %}<p>{% trans "You will be unbanned in: "%}{{ unbandate|timeuntil }}</p>{% endif %}
+<p>{% trans "If you feel that you were unjustly banned, contact the webmaster." %}</p>
 {% endblock %}

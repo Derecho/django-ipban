@@ -11,12 +11,17 @@ class IPBanMiddleware(object):
 
     # see if user is banned
     try:
-      # if this doesnt throw an exception, user is banned
-      ban = Ban.objects.get(ip=ip)
-      reason = ban.reason
+        # if this doesnt throw an exception, user is banned
+        ban = Ban.objects.get(ip=ip)
+        
+        if ban.banned():
+            # return the "ban page"
+            return render_to_response("ban/banned.html",
+                {"reason": ban.reason, "unbandate": ban.unbandate()})
+        else:
+            # User was previously banned, but the ban is over by now
+            ban.delete()
+            pass
 
-      # return the "ban page"
-      return render_to_response("ban/banned.html",
-        {"reason": reason})
     except Ban.DoesNotExist: # not banned! goodie
-      pass
+        pass
